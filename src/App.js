@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TabBar from './components/TabBar'
+import NavBar from './components/NavBar'
+
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { Provider } from 'react-redux'
+import store from './store'
+
+import Equipment from './screens/Equipment'
+import SkillScreen from './screens/SkillScreen'
+
+const tabLabels = ["Skills","Equipment","Certifications"]
+const panels = [(<SkillScreen/>),(<Equipment/>)]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Provider store={store}>
+      <NavBar/>
+      <TabBar 
+        tabLabels={tabLabels} 
+        panels={panels}
+      />
+  </Provider>
   );
 }
 
