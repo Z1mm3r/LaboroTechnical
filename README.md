@@ -11,3 +11,6 @@ Material UI
 React-redux
 lodash
 react-swipeable-views
+
+##Demo
+https://media.giphy.com/media/ekjbO7ROml1MrbaNOF/source.gif
